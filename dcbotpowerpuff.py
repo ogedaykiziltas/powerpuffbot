@@ -2,6 +2,8 @@ import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
 import random
+import os
+
  bot = discord.Client()
 bot_prefix = "_"
 bot = commands.Bot(command_prefix = bot_prefix)
@@ -30,4 +32,4 @@ async def s(ctx):
     abc=ctx.message.content.split("1")
     await bot.delete_message(ctx.message)
     await bot.send_message(ctx.message.channel , abc)
- bot.run("NTExNTU4MTM4ODkwMjg5MTc4.DsyIxw.27jqZg4iPWreKPJ_UzJbTkYIbwk")
+ bot.run(os.environ.get('token'))
